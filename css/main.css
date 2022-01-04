@@ -1,0 +1,22 @@
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.canvas {
+  width: 400px;
+  height: 240px;
+  margin-bottom: 2rem;
+  background-color: #222;
+}
+
+.character {
+  width: 72px;
+  height: 72px;
+  background-color: red;
+}
