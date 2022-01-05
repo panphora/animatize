@@ -46,23 +46,16 @@ playButtonElem.addEventListener("click", (event) => {
 
 
 let currentLoop = 0;
-let lastTime = 0;
 function gameLoop() {
 
   if (currentLoop === history.length) {
     currentLoop = 0;
-    lastTime = 0;
     return;
   }
 
-  let currentTime = Date.now();
-
-  if (currentTime - lastTime > 1) {
-    let currentTranslation = history[currentLoop];
-    characterElem.style.transform = currentTranslation;
-    lastTime = currentTime;
-    currentLoop++
-  }
+  let currentTranslation = history[currentLoop];
+  characterElem.style.transform = currentTranslation;
+  currentLoop++
 
   window.requestAnimationFrame(gameLoop);
 }
