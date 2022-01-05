@@ -1,5 +1,5 @@
 .container {
-  max-width: 600px;
+  max-width: 800px;
   margin: 60px auto;
 }
 
@@ -36,6 +36,32 @@ label {
   background-color: #222;
 }
 
+.animation-container.full {
+  overflow: hidden;
+  width: 800px;
+  height: 480px;
+}
+
+.animation-container.full .character {
+  width: 144px;
+  height: 144px;
+  top: 0;
+  left: 0;
+}
+
+.animation-container.full .canvas {
+  width: 800px;
+  height: 480px;
+  top: 0;
+  left: 0;
+}
+
+
+
+
+.hide {
+  display: none;
+}
 
 
 
