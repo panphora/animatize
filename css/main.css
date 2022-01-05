@@ -8,15 +8,45 @@ label {
   margin-bottom: 2rem;
 }
 
-.canvas {
-  width: 400px;
-  height: 240px;
+.animation-container {
+  position: relative;
+  height: 120px;
   margin-bottom: 2rem;
-  background-color: #222;
+}
+
+.animation-container.colliding .character {
+  background-color: blue;
 }
 
 .character {
-  width: 72px;
-  height: 72px;
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: 36px;
+  height: 36px;
   background-color: red;
 }
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  width: 200px;
+  height: 120px;
+  background-color: #222;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
