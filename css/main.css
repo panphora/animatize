@@ -15,7 +15,7 @@ label {
 }
 
 .animation-container.colliding .character {
-  background-color: blue;
+  /*background-color: blue;*/
 }
 
 .character {
@@ -24,7 +24,7 @@ label {
   left: 0;
   width: 36px;
   height: 36px;
-  background-color: red;
+  background: url(../images/boat.png) top left / cover no-repeat;
 }
 
 .canvas {
@@ -33,7 +33,7 @@ label {
   left: 60px;
   width: 200px;
   height: 120px;
-  background-color: #222;
+  background: url(../images/bg.png) top left / cover no-repeat;
 }
 
 .animation-container.full {

@@ -21,8 +21,6 @@ interact('.draggable').draggable({
       let translation = `translate(${position.x}px, ${position.y}px)`;
       event.target.style.transform = translation;
 
-      console.log(rect1.left, rect2.left, rect1.top, rect2.top);
-
       if (doesCollide(rect1, rect2)) {
         if (dragIndex % 2 === 0) {
           history.push([(rect2.left - rect1.left) * 4, (rect2.top - rect1.top) * 4]);
@@ -57,7 +55,7 @@ function gameLoop() {
     currentLoop = 0;
     setTimeout(() => {
       gameLoop();
-    }, 750);
+    }, 500);
     return;
   }
 
