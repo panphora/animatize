@@ -7,26 +7,32 @@
 </head>
 <body>
   <div class="container">
-    <label>
-      <input type="file" name="background-image">
-      <div>Upload background image: 1600px (width) by 960px (height)</div>
-      <div>Will output as 800px (width) by 480px (height)</div>
-    </label>
-    <label>
-      <input type="file" name="character-image">
-      <div>Upload character image: 288px (width) by 288px (height)</div>
-      <div>Will output as 144px (width) by 144px (height)</div>
-    </label>
-    <div class="animation-container">
+    <h1>Demo</h1>
+    <div class="animation-container full demo" data-input-from="demo">
+      <div class="canvas">
+        <div class="character"></div>
+      </div>
+    </div>
+    <h1>Try yourself:</h1>
+    <div class="animation-container" data-output-to="try-yourself">
       <div class="canvas"></div>
       <div class="character draggable"></div>
     </div>
-    <div class="animation-container full">
+    <div class="animation-container full" data-input-from="try-yourself">
       <div class="canvas">
         <div class="character hide"></div>
       </div>
     </div>
-    <button class="play-button">Play back!</button>
+    <h1>Animate your own images!</h1>
+    <div class="animation-container" data-output-to="animated-your-own-images">
+      <div class="canvas"></div>
+      <div class="character draggable"></div>
+    </div>
+    <div class="animation-container full" data-input-from="animated-your-own-images">
+      <div class="canvas">
+        <div class="character hide"></div>
+      </div>
+    </div>
   </div>
   <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
   <script src="js/main.js"></script>
