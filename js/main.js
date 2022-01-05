@@ -66,7 +66,9 @@ interact('.draggable').draggable({
 
         if (throttleMovementIndex % 2 === 0) {
           // make character movement relative to background
-          characterElem.animationOutputElem.animationHistory.push([((characterRect.left - backgroundRect.left) / backgroundRect.width) * 100, ((characterRect.top - backgroundRect.top) / backgroundRect.height) * 100]);
+          let leftPercentage = ((characterRect.left - backgroundRect.left) / backgroundRect.width) * 100;
+          let topPercentage = ((characterRect.top - backgroundRect.top) / backgroundRect.height) * 100;
+          characterElem.animationOutputElem.animationHistory.push([leftPercentage, topPercentage]);
         }
 
         throttleMovementIndex++;
