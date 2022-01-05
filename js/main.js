@@ -82,18 +82,17 @@ function gameLoop() {
   for (let i = 0; i < animationOutputElemsCount; i++) {
     let animationOutputElem = animationOutputElems[i];
 
-    if (animationOutputElem.animationHistory.length === 0) {
-      return;
+    if (animationOutputElem.animationHistory.length !== 0) {
+      if (animationOutputElem.animationIndex === animationOutputElem.animationHistory.length) {
+        animationOutputElem.animationIndex = 0;
+      }
+
+      let currentTranslation = animationOutputElem.animationHistory[animationOutputElem.animationIndex];
+      animationOutputElem.characterElem.classList.remove("hide");
+      animationOutputElem.characterElem.style.transform = `translate(${currentTranslation[0]}px, ${currentTranslation[1]}px)`;
+      animationOutputElem.animationIndex++;
     }
 
-    if (animationOutputElem.animationIndex === animationOutputElem.animationHistory.length) {
-      animationOutputElem.animationIndex = 0;
-    }
-
-    let currentTranslation = animationOutputElem.animationHistory[animationOutputElem.animationIndex];
-    animationOutputElem.characterElem.classList.remove("hide");
-    animationOutputElem.characterElem.style.transform = `translate(${currentTranslation[0]}px, ${currentTranslation[1]}px)`;
-    animationOutputElem.animationIndex++;
   }
 
   window.requestAnimationFrame(gameLoop);
