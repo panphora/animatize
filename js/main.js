@@ -1,6 +1,9 @@
 let canvasElem = document.querySelector(".canvas");
 let characterElem = document.querySelector(".character");
+let playButtonElem = document.querySelector(".play-button");
+
 let position = { x: 0, y: 0 };
+let history = [];
 
 interact('.draggable').draggable({
   listeners: {
@@ -14,9 +17,12 @@ interact('.draggable').draggable({
       let rect1 = interact.getElementRect(canvasElem);
       let rect2 = interact.getElementRect(characterElem);
 
-      // doesCollide(rect1, rect2);
+      let translation = `translate(${position.x}px, ${position.y}px)`
+      event.target.style.transform = translation;
 
-      event.target.style.transform = `translate(${position.x}px, ${position.y}px)`;
+      if (doesCollide(rect1, rect2)) {
+        history.push(translation);
+      }
     },
   }
 })
@@ -28,6 +34,27 @@ function doesCollide (elemPos1, elemPos2) {
             && elemPos1.top < elemPos2.top + elemPos2.height 
             && elemPos1.height + elemPos1.top > elemPos2.top;
 }
+
+
+playButtonElem.addEventListener("click", (event) => {
+  gameLoop();
+});
+
+
+let currentLoop = 0;
+function gameLoop() {
+
+  if (currentLoop === history.length) {
+    return;
+  }
+
+  let currentTranslation = history[currentLoop];
+  characterElem.style.transform = currentTranslation;
+
+  currentLoop++
+  window.requestAnimationFrame(gameLoop);
+}
+
 
 
 
