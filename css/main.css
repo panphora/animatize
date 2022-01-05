@@ -1,63 +1,58 @@
 .container {
-  max-width: 800px;
+  max-width: 960px;
   margin: 60px auto;
 }
 
-label {
-  display: block;
-  margin-bottom: 2rem;
-}
-
-.animation-container {
+.canvas {
   position: relative;
-  height: 120px;
+  left: 60px;
+  max-width: 200px;
   margin-bottom: 2rem;
 }
 
-.animation-container.colliding .character {
-  /*background-color: blue;*/
+.canvas-inner {
+  width: 100%;
+  padding-top: 60%;
+  background: url(../images/bg.png) top left / cover no-repeat;
+}
+
+.character-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .character {
   position: absolute;
   top: 42px;
-  left: 0;
-  width: 36px;
-  height: 36px;
+  left: -60px;
+  width: 18%;
+}
+
+.character-inner {
+  width: 100%;
+  padding-top: 100%;
   background: url(../images/boat.png) top left / cover no-repeat;
 }
 
-.canvas {
-  position: absolute;
-  top: 0;
-  left: 60px;
-  width: 200px;
-  height: 120px;
-  background: url(../images/bg.png) top left / cover no-repeat;
-}
-
-.animation-container.full {
-  overflow: hidden;
-  width: 800px;
-  height: 480px;
-}
-
-.animation-container.full .character {
-  width: 144px;
-  height: 144px;
-  top: 0;
+.canvas.full {
+  overflow: hidden; /* to hide character when it's out of frame */
   left: 0;
+  max-width: 100%;
 }
 
-.animation-container.full .canvas {
-  width: 800px;
-  height: 480px;
+.canvas.full .character {
   top: 0;
   left: 0;
 }
 
 
-
+label {
+  display: block;
+  margin-bottom: 2rem;
+}
 
 .hide {
   display: none;

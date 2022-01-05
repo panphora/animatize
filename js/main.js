@@ -1,7 +1,7 @@
 let characterElems = document.querySelectorAll(".character");
 
-let animationOutputElems = document.querySelectorAll(".animation-container[data-input-from]");
-let animationInputElems = document.querySelectorAll(".animation-container[data-output-to]");
+let animationOutputElems = document.querySelectorAll(".canvas[data-input-from]");
+let animationInputElems = document.querySelectorAll(".canvas[data-output-to]");
 let animationOutputElemsCount = animationOutputElems.length;
 
 // file inputs
@@ -11,8 +11,9 @@ let characterImageInputElem = document.querySelector("[name='character-image']")
 function init () {
   animationOutputElems.forEach(el => {
     let selector = `[data-output-to="${el.getAttribute("data-input-from")}"]`;
-    el.isAnimationOutputElem = true;
     el.animationInputElem = document.querySelector(selector);
+    el.isAnimationOutputElem = true;
+    el.characterContainerElem = el.querySelector(".character-container");
 
     el.animationHistory = [];
     el.animationIndex = 0;
@@ -20,12 +21,12 @@ function init () {
 
   animationInputElems.forEach(el => {
     let selector = `[data-input-from="${el.getAttribute("data-output-to")}"]`;
-    el.isAnimationInputElem = true;
     el.animationOutputElem = document.querySelector(selector);
+    el.isAnimationInputElem = true;
   });
 
   characterElems.forEach(el => {
-    el.animationContainerElem = el.closest(".animation-container");
+    el.animationContainerElem = el.closest(".canvas");
     el.animationContainerElem.characterElem = el;
     
     if (el.animationContainerElem.isAnimationInputElem) {
@@ -34,7 +35,7 @@ function init () {
       el.animationInputElem = el.animationContainerElem.animationInputElem;
     }
 
-    el.backgroundElem = el.animationContainerElem.querySelector(".canvas");
+    el.backgroundElem = el.animationContainerElem.querySelector(".canvas-inner");
     el.positionX = 0;
     el.positionY = 0;
     el.throttleMovementIndex = 0;
@@ -58,14 +59,14 @@ interact('.draggable').draggable({
 
       let characterRect = interact.getElementRect(characterElem);
       let backgroundRect = interact.getElementRect(backgroundElem);
+
       if (doesCollide(characterRect, backgroundRect)) {
         // don't record every movement to save space
         let throttleMovementIndex = characterElem.throttleMovementIndex;
 
         if (throttleMovementIndex % 2 === 0) {
           // make character movement relative to background
-          // TODO convert this to relative units -- PERCENTAGES
-          characterElem.animationOutputElem.animationHistory.push([(characterRect.left - backgroundRect.left) * 4, (characterRect.top - backgroundRect.top) * 4]);
+          characterElem.animationOutputElem.animationHistory.push([((characterRect.left - backgroundRect.left) / backgroundRect.width) * 100, ((characterRect.top - backgroundRect.top) / backgroundRect.height) * 100]);
         }
 
         throttleMovementIndex++;
@@ -89,7 +90,7 @@ function gameLoop() {
 
       let currentTranslation = animationOutputElem.animationHistory[animationOutputElem.animationIndex];
       animationOutputElem.characterElem.classList.remove("hide");
-      animationOutputElem.characterElem.style.transform = `translate(${currentTranslation[0]}px, ${currentTranslation[1]}px)`;
+      animationOutputElem.characterContainerElem.style.transform = `translate(${currentTranslation[0]}%, ${currentTranslation[1]}%)`;
       animationOutputElem.animationIndex++;
     }
 
