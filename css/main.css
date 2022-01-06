@@ -134,6 +134,37 @@ h1, h2, h3, h4, h5, h6 {
   bottom: -4px;
 }
 
+/* 123 */
+
+.instruction-123 {
+
+}
+
+.instruction-123 > div {
+  display: flex;
+  margin-bottom: 2.5rem;
+}
+
+.instruction-123-desc {
+  margin-left: 1rem;
+}
+
+.instruction-123-desc > label {
+  margin-bottom: .5rem;
+}
+
+.instruction-123-header {
+  margin-bottom: .5rem;
+  font-weight: bold;
+}
+
+.instruction-123-extra {
+  font-size: 18px;
+  font-weight: 600;
+  opacity: .75;
+}
+
+
 /* instructions */
 
 .instructions {
@@ -168,16 +199,10 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-label {
-  display: block;
-  margin-bottom: 2rem;
-}
-
 .code {
   display: block;
   width: 100%;
   min-height: 240px;
-  margin-bottom: 2rem;
   border: 4px solid #111;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }

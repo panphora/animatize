@@ -54,7 +54,7 @@
         </div>
       </div>
     </div>
-    <h3 class="h3 normal text-center" style="margin-top: 6rem; opacity: .4;">Welcome to</h3>
+    <h3 class="h3 normal text-center" style="margin-top: 6rem; opacity: .5;">Welcome to</h3>
     <div class="nm text-center">
       <h2 class="h1 inline-block intro-header">Animatize <img class="clicking-cursor" src="/images/clicking-cursor.svg"></h2>
     </div>
@@ -111,14 +111,44 @@
             </div>
           </div>
         </div>
+        <div class="instruction-123">
+          <div>
+            <img width="54" height="54" src="/images/1.svg">
+            <div class="instruction-123-desc">
+              <div class="instruction-123-header">Upload a background image</div>
+              <input type="file" name="file" id="file" class="custom-file-input" />
+              <label for="file">upload a background</label>
+              <div class="instruction-123-extra">width: 800px, height: 480px</div>
+            </div>
+          </div>
+          <div>
+            <img width="54" height="54" src="/images/2.svg">
+            <div class="instruction-123-desc">
+              <div class="instruction-123-header">Upload a character image</div>
+              <input type="file" name="file" id="file" class="custom-file-input" />
+              <label for="file">upload a character</label>
+              <div class="instruction-123-extra">width: 144px, height: 144px</div>
+            </div>
+          </div>
+          <div>
+            <img width="54" height="54" src="/images/3.svg">
+            <div class="instruction-123-desc">
+              <div class="instruction-123-header">Drag the character around</div>
+            </div>
+          </div>
+        </div>
+        <div class="instruction-danger"></div>
       </div>
     </div>
-    <div>
-      <input type="file" name="file" id="file" class="custom-file-input" />
-      <label for="file">upload a background</label>
-    </div>
+
+    <h2 class="h2">Add it to your own site!</h2>
+    <p style="max-width: 400px; margin-top: 1rem; opacity: .5;">Once you drag the character onto the canvas, the animation will start recording.</p>
+    <p style="max-width: 400px; margin-top: 1rem; opacity: .5;">Once your finished, you can download the code and add it to your own site!</p>
+    <button class="button">generate code</button>
     <textarea class="code" readonly>hello there yeah cool</textarea>
-    <button class="button copy-code" data-clipboard-target=".code">copy code</button>
+    <button class="button copy-code" data-clipboard-target=".code" style="margin-top: .5rem;">copy code</button>
+    <p style="max-width: 400px; margin-top: 1rem; opacity: .5;">Copy and paste this code into your website where you want this animation to appear</p>
+    <p style="max-width: 400px; margin-top: 1rem; opacity: .5;">It will load instantly and start playing!</p>
   </div>
 </body>
 </html>

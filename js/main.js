@@ -123,6 +123,29 @@ function gameLoop() {
 gameLoop();
 
 
+
+let customFileInputs = document.querySelectorAll(".custom-file-input");
+customFileInputs.forEach((customFileInput) => {
+  let label  = customFileInput.nextElementSibling;
+  let labelVal = label.innerHTML;
+
+  customFileInput.addEventListener("change", (event) => {
+    let fileName = "";
+
+    if (this.files && this.files.length > 1) {
+      fileName = "Error: Can't upload more than one file";
+    } else {
+      fileName = event.target.value.split(/(\\|\/)/g).pop();
+    }
+
+    if (fileName) {
+      label.innerHTML = fileName;
+    } else {
+      label.innerHTML = labelVal;
+    }
+  });
+});
+
 // let dataurl;
 // backgroundImageInputElem.addEventListener("change", (event) => {
 //   const file = backgroundImageInputElem.files[0];
