@@ -121,14 +121,14 @@ code {
   box-sizing: border-box;
   flex: 0 0 auto;
   display: inline-block;
-  padding: .75rem 1.2rem;
+  padding: .68rem 1.3rem;
   background-color: #111;
   border: 1px solid transparent;
-  border-radius: .75rem;
+  border-radius: 9999px;
   color: #FFFFFF;
   cursor: pointer;
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 500;
   line-height: 1.5rem;
   text-align: center;
   text-decoration: none #6B7280 solid;
@@ -147,7 +147,7 @@ code {
 }
 
 .button:hover, .custom-file-input:focus + label, .custom-file-input + label:hover {
-  background-color: #1f2937;
+  background-color: #262626;
 }
 
 .button:focus, .custom-file-input:focus + label, .custom-file-input.has-focus + label {
