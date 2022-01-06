@@ -159,6 +159,15 @@ function doesCollide (elemPos1, elemPos2) {
 
 
 
+// FIXES
+
+// fix firefox bug, see: https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
+document.querySelectorAll(".custom-file-input").forEach(inputElem => {
+  inputElem.addEventListener("focus", () => { inputElem.classList.add("has-focus") });
+  inputElem.addEventListener("blur", () => { inputElem.classList.remove("has-focus") });
+});
+
+
 
 
 

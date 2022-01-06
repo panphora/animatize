@@ -70,6 +70,13 @@ body {
   height: 9%;
 }
 
+.canvas.user .canvas-inner, .canvas.user .character-inner {
+  background-image: none;
+  border: 3px solid black;
+}
+
+
+
 label {
   display: block;
   margin-bottom: 2rem;
@@ -85,6 +92,82 @@ label {
 code {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+
+
+
+/*
+
+  CUSTOM BUTTON
+
+  &
+
+  CUSTOM FILE INPUT 
+
+  <input type="file" name="file" id="file" class="custom-file-input" />
+  <label for="file">Choose a file</label>
+
+*/
+
+.custom-file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.button, .custom-file-input + label {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  display: inline-block;
+  padding: .75rem 1.2rem;
+  background-color: #111;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+.button *, .custom-file-input + label * {
+  pointer-events: none;
+}
+
+.button:hover, .custom-file-input:focus + label, .custom-file-input + label:hover {
+  background-color: #1f2937;
+}
+
+.button:focus, .custom-file-input:focus + label, .custom-file-input.has-focus + label {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: .75rem 1.5rem;
+  }
+}
+
+
+
+
+
+
+
 
 
 

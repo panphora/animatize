@@ -23,6 +23,8 @@
 
   <link rel="icon" href="https://fav.farm/⚡️" />
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
   <link rel="stylesheet" href="css/main.css?v=8">
   <script src="https://unpkg.com/interactjs/dist/interact.min.js" defer></script>
   <script src="js/main.js?v=8" defer></script>
@@ -31,6 +33,10 @@
 </head>
 <body>
   <div class="container">
+    <div>
+      <input type="file" name="file" id="file" class="custom-file-input" />
+      <label for="file">Choose a file</label>
+    </div>
     <h1>Demo</h1>
     <div class="canvas full demo" data-input-from="demo">
       <div class="canvas-inner">
@@ -62,7 +68,7 @@
       </div>
     </div>
     <h1>Animate your own images!</h1>
-    <div class="canvas" data-output-to="animated-your-own-images">
+    <div class="canvas user" data-output-to="animated-your-own-images">
       <div class="canvas-inner">
         <div class="character-container">
           <div class="character draggable">
