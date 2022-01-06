@@ -106,6 +106,8 @@ interact('.draggable').draggable({
 
 
 
+
+
 function gameLoop() {
 
   // loop through the animation output elements
@@ -293,6 +295,8 @@ document.querySelector(".generate-code").addEventListener("click", () => {
   codeContainer.querySelector(".code").value = generateCode();
   codeContainer.classList.remove("hide");
 });
+
+
 
 
 

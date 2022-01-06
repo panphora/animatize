@@ -224,6 +224,11 @@ body .crostini {
   transform: translate(0, -140%);
 }
 
+/* fix iOS Safari/Chrome bug with not being able to drag the character */
+.draggable {
+  touch-action: none;
+}
+
 .drag-started .character-label, .drag-started .canvas-label, .drag-started .instructions-4 {
   display: none;
 }
