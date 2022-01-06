@@ -1,4 +1,5 @@
 body {
+  padding: 1.5rem;
   line-height: 1.44;
   color: #212529;
   font-size: 21px;
@@ -6,7 +7,7 @@ body {
 }
 
 .container {
-  max-width: 500px;
+  max-width: 532px;
   margin: 2.5rem auto;
 }
 
@@ -28,7 +29,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .play {
-  border-radius: 5px;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+  border-top: 4px solid #D6336C;
+  border-bottom: 4px solid #D6336C;
+  background-color: #FFEAF6;
 }
 
 .play-inner {
@@ -211,8 +217,8 @@ body .crostini {
 
 @media (min-width: 700px) {
   .play {
-    padding: 2.5rem 0 2.5rem 0;
     border: 3px solid #D6336C;
+    border-radius: 5px;
   }
 }
 

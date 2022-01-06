@@ -61,8 +61,8 @@
     <p>Make an animation by dragging a character around the screen</p>
     <div class="play">
       <div class="play-inner childred-margin">
-        <h2 class="h2">Try yourself:</h2>
-        <div class="canvas" data-output-to="try-yourself" style="margin-top: 4rem;">
+        <h2 class="h2">Try it out!</h2>
+        <div class="canvas" data-output-to="try-yourself" style="margin-top: 5rem;">
           <img class="instructions instructions-1" src="/images/instructions-1.svg">
           <img class="instructions instructions-2" src="/images/instructions-2.svg">
           <img class="instructions instructions-3" src="/images/instructions-3.svg">
@@ -85,28 +85,33 @@
         </div>
       </div>
     </div>
-    <h2 class="h2">Animate your own images!</h2>
+    <h2 class="h1 text-center" style="margin: 5.5rem 0;">Want to make one for your own website?</h2>
+    <div class="play">
+      <div class="play-inner childred-margin">
+        <h2 class="h2">Make your own animation</h2>
+        <div class="canvas user" data-output-to="animated-your-own-images">
+          <div class="canvas-inner">
+            <div class="character-container">
+              <div class="character draggable">
+                <div class="character-inner"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="canvas full" data-input-from="animated-your-own-images">
+          <div class="canvas-inner">
+            <div class="character-container">
+              <div class="character hide">
+                <div class="character-inner"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div>
       <input type="file" name="file" id="file" class="custom-file-input" />
       <label for="file">upload a background</label>
-    </div>
-    <div class="canvas user" data-output-to="animated-your-own-images">
-      <div class="canvas-inner">
-        <div class="character-container">
-          <div class="character draggable">
-            <div class="character-inner"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="canvas full" data-input-from="animated-your-own-images">
-      <div class="canvas-inner">
-        <div class="character-container">
-          <div class="character hide">
-            <div class="character-inner"></div>
-          </div>
-        </div>
-      </div>
     </div>
     <textarea class="code" readonly>hello there yeah cool</textarea>
     <button class="button copy-code" data-clipboard-target=".code">copy code</button>
