@@ -68,6 +68,12 @@ init();
 
 interact('.draggable').draggable({
   listeners: {
+    start (event) {
+      let playElem = event.target.closest(".play");
+      if (playElem) {
+        playElem.classList.add("drag-started");
+      }
+    },
     move (event) {
       let characterElem = event.currentTarget;
       let backgroundElem = characterElem.backgroundElem;

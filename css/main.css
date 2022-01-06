@@ -224,6 +224,10 @@ body .crostini {
   transform: translate(0, -140%);
 }
 
+.drag-started .character-label, .drag-started .canvas-label, .drag-started .instructions-4 {
+  display: none;
+}
+
 /* user animation */
 
 .hide-user-animations .canvas {
