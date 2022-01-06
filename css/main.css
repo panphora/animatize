@@ -37,6 +37,12 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #FFEAF6;
 }
 
+.play.blue {
+  border-top: 4px solid #3B5BDB;
+  border-bottom: 4px solid #3B5BDB;
+  background-color: #DBE4FF; 
+}
+
 .play-inner {
   max-width: 500px;
   margin: 0 auto;
@@ -105,6 +111,14 @@ h1, h2, h3, h4, h5, h6 {
   height: 9%;
 }
 
+.canvas.user {
+  left: 180px;
+}
+
+.canvas.user .character {
+  left: -120px;
+}
+
 .canvas.user .canvas-inner, .canvas.user .character-inner {
   background-image: none;
   border: 3px solid black;
@@ -146,6 +160,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 275px;
 }
 
+.instructions-4 {
+  top: 26px;
+  left: -68px;
+  width: 58px;
+}
+
 
 
 label {
@@ -164,6 +184,24 @@ label {
 
 body .crostini {
   background-color: #1F8535;
+}
+
+/* labels */
+
+.character-label, .canvas-label {
+  position: absolute;
+  top: 0;
+  right: -6px;
+  transform: translate(0, -120%);
+  line-height: 1;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.canvas-label {
+  right: auto;
+  left: 0;
+  transform: translate(0, -140%);
 }
 
 
@@ -217,7 +255,7 @@ body .crostini {
 
 @media (min-width: 700px) {
   .play {
-    border: 3px solid #D6336C;
+    border: 3px solid #3B5BDB;
     border-radius: 5px;
   }
 }
