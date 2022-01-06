@@ -14,6 +14,7 @@ let demoDotsHTML = '<span style="left: 0.048828125%; top: 76.427734375%;"></span
 let demoCanvasInner = document.querySelector(".canvas.full.demo .canvas-inner");
 demoCanvasInner.insertAdjacentHTML("afterbegin", demoDotsHTML);
 
+// // for generating demo dots:
 // let demoDotsHTML = "";
 // demoAnimationHistory.forEach((coord, index) => {
 //   if (index % 7 === 0) {
