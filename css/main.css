@@ -41,7 +41,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   left: 120px;
   max-width: 200px;
-  margin-bottom: 2rem;
 }
 
 .canvas-inner {
@@ -120,6 +119,7 @@ h1, h2, h3, h4, h5, h6 {
 .instructions {
   position: absolute;
   pointer-events: none;
+  max-width: none;
 }
 
 .instructions-1 {
@@ -132,6 +132,12 @@ h1, h2, h3, h4, h5, h6 {
   top: -20px;
   left: 213px;
   width: 94px;
+}
+
+.instructions-3 {
+  bottom: -165px;
+  left: 48px;
+  width: 275px;
 }
 
 
