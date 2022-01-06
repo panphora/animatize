@@ -26,6 +26,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
   <link rel="stylesheet" href="css/main.css?v=9">
+  <style id="character-background-image"></style>
+  <style id="background-background-image"></style>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.10.11/interact.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js" defer></script>
@@ -36,7 +38,7 @@
   <script defer data-domain="animatize.com" data-api="https://round-butterfly-d351.remake.workers.dev/hello-world/event" src="https://round-butterfly-d351.remake.workers.dev/hello-world/script.js"></script>
 </head>
 <body>
-  <div class="container childred-margin">
+  <div class="container children-margin">
     <h1 class="h1">Making animations the easy way</h1>
     <p>I’ve always dreamed of making animations, but the software is so complex...</p>
     <img src="/images/animation-software.jpg">
@@ -60,7 +62,7 @@
     </div>
     <p>Make an animation by dragging a character around the screen</p>
     <div class="play">
-      <div class="play-inner childred-margin">
+      <div class="play-inner children-margin">
         <h2 class="h2">Try it out!</h2>
         <div class="canvas" data-output-to="try-yourself" style="margin-top: 5rem;">
           <img class="instructions instructions-1" src="/images/instructions-1.svg">
@@ -86,27 +88,27 @@
       </div>
     </div>
     <h2 class="h1 text-center" style="margin: 5.5rem 0;">Want to make one for your own website?</h2>
-    <div class="play blue">
-      <div class="play-inner childred-margin">
+    <div class="play blue hide-user-animations" data-has-background="false" data-has-character="false">
+      <div class="play-inner children-margin">
         <h2 class="h2">Make your own animation</h2>
-        <div class="canvas user hide" data-output-to="animated-your-own-images" style="margin-top: 4rem;">
+        <div class="canvas user" data-output-to="animate-your-own-images" style="margin-top: 4rem;">
           <img class="instructions instructions-4" src="/images/instructions-4.svg">
           <div class="canvas-label">Your canvas:</div>
-          <div class="canvas-inner">
+          <div class="canvas-inner user-background-image">
             <div class="character-container">
               <div class="character draggable">
-                <div class="character-inner">
+                <div class="character-inner user-character-image">
                   <div class="character-label">Your<br>character:</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="canvas full hide" data-input-from="animated-your-own-images" style="margin-top: 3rem;">
-          <div class="canvas-inner">
+        <div class="canvas full" data-input-from="animate-your-own-images" style="margin-top: 3rem;">
+          <div class="canvas-inner user-background-image">
             <div class="character-container">
-              <div class="character hide">
-                <div class="character-inner"></div>
+              <div class="character">
+                <div class="character-inner user-character-image"></div>
               </div>
             </div>
           </div>
@@ -116,8 +118,8 @@
             <img width="54" height="54" src="/images/1.svg">
             <div class="instruction-123-desc">
               <div class="instruction-123-header">Upload a background image</div>
-              <input type="file" name="file" id="file" class="custom-file-input" />
-              <label for="file">upload a background</label>
+              <input type="file" name="backgroundImage" id="backgroundImage" class="custom-file-input" />
+              <label for="backgroundImage">upload a background</label>
               <div class="instruction-123-extra">width: 800px, height: 480px</div>
             </div>
           </div>
@@ -125,8 +127,8 @@
             <img width="54" height="54" src="/images/2.svg">
             <div class="instruction-123-desc">
               <div class="instruction-123-header">Upload a character image</div>
-              <input type="file" name="file" id="file" class="custom-file-input" />
-              <label for="file">upload a character</label>
+              <input type="file" name="characterImage" id="characterImage" class="custom-file-input" />
+              <label for="characterImage">upload a character</label>
               <div class="instruction-123-extra">width: 144px, height: 144px</div>
             </div>
           </div>

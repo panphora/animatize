@@ -30,6 +30,8 @@ function init () {
     el.animationInputElem = document.querySelector(animationInputElemSelector);
     el.isAnimationOutputElem = true;
     el.characterContainerElem = el.querySelector(".character-container");
+    el.backgroundElem = el.querySelector(".canvas-inner");
+    el.characterElem = el.querySelector(".character-inner");
 
     el.animationHistory = [];
     el.animationIndex = 0;
@@ -123,25 +125,38 @@ function gameLoop() {
 gameLoop();
 
 
-
+let userAnimationPlayContainer = document.querySelector('[data-has-character][data-has-background]');
+let characterBackgroundImageStylesheet = document.querySelector("#character-background-image");
+let backgroundBackgroundImageStylesheet = document.querySelector("#background-background-image");
+let characterBackgroundImageElem = document.querySelector(".user-character-image");
+let backgroundBackgroundImageElem = document.querySelector(".user-background-image");
 let customFileInputs = document.querySelectorAll(".custom-file-input");
 customFileInputs.forEach((customFileInput) => {
-  let label  = customFileInput.nextElementSibling;
-  let labelVal = label.innerHTML;
-
   customFileInput.addEventListener("change", (event) => {
-    let fileName = "";
+    let file = customFileInput.files[0];
 
-    if (this.files && this.files.length > 1) {
-      fileName = "Error: Can't upload more than one file";
-    } else {
-      fileName = event.target.value.split(/(\\|\/)/g).pop();
-    }
+    if ( /\.(jpe?g|png|gif)$/i.test(file.name) ) {
+      let reader = new FileReader();
 
-    if (fileName) {
-      label.innerHTML = fileName;
-    } else {
-      label.innerHTML = labelVal;
+      reader.addEventListener("load", function () {
+        customFileInput.nextElementSibling.innerText = file.name;
+
+        if (customFileInput.id === "backgroundImage") {
+          backgroundBackgroundImageStylesheet.innerHTML = ".user-background-image {background-image: url(" + reader.result + ")}";
+          userAnimationPlayContainer.setAttribute("data-has-background", "true");
+        }
+
+        if (customFileInput.id === "characterImage") {
+          characterBackgroundImageStylesheet.innerHTML = ".user-character-image {background-image: url(" + reader.result + ")}";
+          userAnimationPlayContainer.setAttribute("data-has-character", "true");
+        }
+
+        if (userAnimationPlayContainer.getAttribute("data-has-background") === "true" && userAnimationPlayContainer.getAttribute("data-has-character") === "true") {
+          userAnimationPlayContainer.classList.remove("hide-user-animations");
+        }
+      }, false);
+
+      reader.readAsDataURL(file);
     }
   });
 });

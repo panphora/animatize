@@ -11,7 +11,7 @@ body {
   margin: 2.5rem auto;
 }
 
-.childred-margin > * + * {
+.children-margin > * + * {
   margin-top: 2rem;
 }
 
@@ -119,11 +119,6 @@ h1, h2, h3, h4, h5, h6 {
   left: -120px;
 }
 
-.canvas.user .canvas-inner, .canvas.user .character-inner {
-  background-image: none;
-  border: 3px solid black;
-}
-
 .intro-header {
   position: relative;
 }
@@ -227,6 +222,12 @@ body .crostini {
   right: auto;
   left: 0;
   transform: translate(0, -140%);
+}
+
+/* user animation */
+
+.hide-user-animations .canvas {
+  display: none;
 }
 
 
