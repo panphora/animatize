@@ -257,6 +257,23 @@ let baseHTML = `
 `;
 
 function generateCode () {
+  let animationHistory = userAnimationPlayContainer.querySelector('[data-input-from="animate-your-own-images"]').animationHistory;
+
+  if (backgroundBackgroundImageStylesheet.innerHTML.length === 0) {
+    crostini("Upload a background first!" , {type: "error"});
+    return;
+  }
+
+  if (characterBackgroundImageStylesheet.innerHTML.length === 0) {
+    crostini("Upload a character first!" , {type: "error"});
+    return;
+  }
+
+  if (animationHistory.length === 0) {
+    crostini("Drag character to animate first" , {type: "error"});
+    return;
+  }
+
   let combinedCSS = "<style>" + baseCSS + backgroundBackgroundImageStylesheet.innerHTML + characterBackgroundImageStylesheet.innerHTML + "</style>";
 
   let baseJS = `
@@ -264,7 +281,7 @@ function generateCode () {
 let animationElem = document.querySelector('.canvas');
 let characterContainerElem = animationElem.querySelector('.character-container');
 let animationIndex = 0;
-let animationHistory = ${JSON.stringify(userAnimationPlayContainer.querySelector('[data-input-from="animate-your-own-images"]').animationHistory)};
+let animationHistory = ${JSON.stringify(animationHistory)};
 
 function gameLoop() {
 
@@ -292,8 +309,11 @@ gameLoop();
 
 let codeContainer = document.querySelector(".code-container");
 document.querySelector(".generate-code").addEventListener("click", () => {
-  codeContainer.querySelector(".code").value = generateCode();
-  codeContainer.classList.remove("hide");
+  let generatedCode = generateCode();
+  if (generatedCode) {
+    codeContainer.querySelector(".code").value = generatedCode;
+    codeContainer.classList.remove("hide");
+  }
 });
 
 
