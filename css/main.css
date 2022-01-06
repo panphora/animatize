@@ -10,11 +10,7 @@ body {
 }
 
 .container > * + * {
-  margin-top: 1.25rem;
-}
-
-.container > * + .ms {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 img {
@@ -28,21 +24,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 1rem;
-}
-
-.h1 {
-  font-size: 3rem;
-  line-height: 1.15;
-}
-
-.h2 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-}
-
-.h3 {
-  font-size: 2rem;
-  line-height: 1.25;
 }
 
 .canvas {
@@ -113,6 +94,16 @@ h1, h2, h3, h4, h5, h6 {
   border: 3px solid black;
 }
 
+.intro-header {
+  position: relative;
+}
+
+.intro-header .clicking-cursor {
+  position: absolute;
+  right: -38px;
+  bottom: -4px;
+}
+
 
 
 label {
@@ -136,8 +127,43 @@ body .crostini {
 
 /* utils */
 
+.inline-block {
+  display: inline-block;
+}
+
 .hide {
   display: none;
+}
+
+.h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+}
+
+.h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.h3 {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.normal {
+  font-weight: 400;
+}
+
+.b {
+  font-weight: bold;
+}
+
+.nm {
+  margin-top: 0;
 }
 
 @media (min-width: 700px) {
