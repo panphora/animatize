@@ -10,6 +10,19 @@ let demoAnimationHistory = JSON.parse('[[-17.951171875,58.42773437499999],[-17.7
 let backgroundImageInputElem = document.querySelector("[name='background-image']");
 let characterImageInputElem = document.querySelector("[name='character-image']");
 
+let demoDotsHTML = '<span style="left: 0.048828125%; top: 76.427734375%;"></span><span style="left: 3.2578125%; top: 76.17057291666666%;"></span><span style="left: 6.7109375%; top: 74.87174479166666%;"></span><span style="left: 10.28125%; top: 73.31901041666667%;"></span><span style="left: 14.064453125%; top: 70.87109375%;"></span><span style="left: 17.9765625%; top: 69.0546875%;"></span><span style="left: 22.03515625%; top: 67.95768229166666%;"></span><span style="left: 26.232421875%; top: 66.66536458333333%;"></span><span style="left: 31.177734375%; top: 65.822265625%;"></span><span style="left: 35.53515625%; top: 65.09309895833334%;"></span><span style="left: 40.263671875%; top: 64.94661458333334%;"></span><span style="left: 44.822265625%; top: 64.94661458333334%;"></span><span style="left: 48.169921875%; top: 64.94661458333334%;"></span><span style="left: 53.072265625%; top: 65.83203125%;"></span><span style="left: 56.208984375%; top: 67.60286458333334%;"></span><span style="left: 59.373046875%; top: 69.44205729166666%;"></span><span style="left: 63.6328125%; top: 71.974609375%;"></span><span style="left: 66.404296875%; top: 73.58268229166666%;"></span><span style="left: 69.41015625%; top: 75.28190104166667%;"></span><span style="left: 73.861328125%; top: 77.49869791666666%;"></span><span style="left: 77.412109375%; top: 78.29296875%;"></span><span style="left: 80.625%; top: 79.04817708333334%;"></span><span style="left: 84.81640625%; top: 80.00520833333333%;"></span><span style="left: 88.24609375%; top: 80.37630208333334%;"></span><span style="left: 92.2890625%; top: 80.37630208333334%;"></span><span style="left: 95.763671875%; top: 79.86197916666667%;"></span><span style="left: 99.318359375%; top: 78.54036458333333%;"></span>';
+let demoCanvasInner = document.querySelector(".canvas.full.demo .canvas-inner");
+demoCanvasInner.insertAdjacentHTML("afterbegin", demoDotsHTML);
+
+// let demoDotsHTML = "";
+// demoAnimationHistory.forEach((coord, index) => {
+//   if (index % 7 === 0) {
+//     demoDotsHTML += `<span style="left: ${coord[0] + 18}%; top: ${coord[1] + 18}%;"></span>`;
+//   }
+// });
+// demoCanvasInner.insertAdjacentHTML("afterbegin", demoDotsHTML);
+// document.addEventListener("click", (e) => e.target.remove());
+
 function init () {
   animationOutputElems.forEach(el => {
     let animationInputElemSelector = `[data-output-to="${el.getAttribute("data-input-from")}"]`;

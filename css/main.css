@@ -1,5 +1,5 @@
 .container {
-  max-width: 960px;
+  max-width: 800px;
   margin: 60px auto;
 }
 
@@ -48,6 +48,15 @@
   left: 0;
 }
 
+.canvas.full.demo .canvas-inner span {
+  position: absolute;
+  display: block;
+  width: 2.7%;
+  height: 4.5%;
+  background-color: #FB0000;
+  border-radius: 50%;
+  transform: scale(.8);
+}
 
 label {
   display: block;
