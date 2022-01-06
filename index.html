@@ -146,11 +146,14 @@
     <h2 class="h2">Add it to your own site!</h2>
     <p style="max-width: 400px; margin-top: 1rem; opacity: .5;">Once you drag the character onto the canvas, the animation will start recording.</p>
     <p style="max-width: 400px; margin-top: 1rem; opacity: .5;">Once your finished, you can download the code and add it to your own site!</p>
-    <button class="button">generate code</button>
-    <textarea class="code" readonly>hello there yeah cool</textarea>
-    <button class="button copy-code" data-clipboard-target=".code" style="margin-top: .5rem;">copy code</button>
-    <p style="max-width: 400px; margin-top: 1rem; opacity: .5;">Copy and paste this code into your website where you want this animation to appear</p>
-    <p style="max-width: 400px; margin-top: 1rem; opacity: .5;">It will load instantly and start playing!</p>
+    <button class="button generate-code">generate code</button>
+
+    <div class="code-container children-margin hide">
+      <textarea class="code" readonly>hello there yeah cool</textarea>
+      <button class="button copy-code" data-clipboard-target=".code" style="margin-top: .5rem;">copy code</button>
+      <p style="max-width: 400px; margin-top: 1rem; opacity: .5;">Copy and paste this code into your website where you want this animation to appear</p>
+      <p style="max-width: 400px; margin-top: 1rem; opacity: .5;">It will load instantly and start playing!</p>
+    </div>
   </div>
 </body>
 </html>

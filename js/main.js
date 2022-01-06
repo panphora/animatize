@@ -167,29 +167,6 @@ customFileInputs.forEach((customFileInput) => {
   });
 });
 
-// let dataurl;
-// backgroundImageInputElem.addEventListener("change", (event) => {
-//   const file = backgroundImageInputElem.files[0];
-//   const reader = new FileReader();
-
-//   reader.addEventListener("load", function () {
-//     // preview.src = reader.result;
-//     dataurl = reader.result;
-//   }, false);
-
-//   if (file) {
-//     reader.readAsDataURL(file);
-//   }
-// });
-
-
-// characterImageInputElem
-
-
-
-
-
-
 
 // UTILS
 
@@ -217,6 +194,112 @@ document.querySelectorAll(".custom-file-input").forEach(inputElem => {
   inputElem.addEventListener("focus", () => { inputElem.classList.add("has-focus") });
   inputElem.addEventListener("blur", () => { inputElem.classList.remove("has-focus") });
 });
+
+
+
+let baseCSS = `
+.canvas {
+  position: relative;
+  left: 120px;
+  max-width: 200px;
+}
+
+.canvas-inner {
+  width: 100%;
+  padding-top: 60%;
+  background: url(../images/bg.png) top left / cover no-repeat;
+}
+
+.character-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.character {
+  position: absolute;
+  top: 42px;
+  left: -60px;
+  width: 18%;
+}
+
+.character-inner {
+  width: 100%;
+  padding-top: 100%;
+  background: url(../images/boat.png) top left / cover no-repeat;
+}
+
+.canvas.full {
+  overflow: hidden; /* to hide character when it's out of frame */
+  left: 0;
+  max-width: 100%;
+}
+
+.canvas.full .character {
+  top: 0;
+  left: 0;
+}`;
+
+let baseHTML = `
+<div class="canvas full">
+  <div class="canvas-inner user-background-image">
+    <div class="character-container">
+      <div class="character">
+        <div class="character-inner user-character-image"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+function generateCode () {
+  let combinedCSS = "<style>" + baseCSS + backgroundBackgroundImageStylesheet.innerHTML + characterBackgroundImageStylesheet.innerHTML + "</style>";
+
+  let baseJS = `
+<script>
+let animationElem = document.querySelector('.canvas');
+let characterContainerElem = animationElem.querySelector('.character-container');
+let animationIndex = 0;
+let animationHistory = ${JSON.stringify(userAnimationPlayContainer.querySelector('[data-input-from="animate-your-own-images"]').animationHistory)};
+
+function gameLoop() {
+
+  if (animationHistory.length !== 0) {
+    if (animationIndex === animationHistory.length) {
+      animationIndex = 0;
+    }
+
+    let currentTranslation = animationHistory[animationIndex];
+    characterContainerElem.style.transform = "translate(" + currentTranslation[0] + "%, " + currentTranslation[1] + "%)";
+    animationIndex++;
+  }
+
+  window.requestAnimationFrame(gameLoop);
+}
+
+gameLoop();
+</script>
+`;
+
+  let outputtedCode = combinedCSS + baseHTML + baseJS;
+  return outputtedCode;  
+}
+
+
+let codeContainer = document.querySelector(".code-container");
+document.querySelector(".generate-code").addEventListener("click", () => {
+  codeContainer.querySelector(".code").value = generateCode();
+  codeContainer.classList.remove("hide");
+});
+
+
+
+
+
+
+
 
 
 
