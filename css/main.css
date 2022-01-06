@@ -129,7 +129,7 @@ code {
   cursor: pointer;
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 1.5rem;
+  line-height: 1.5;
   text-align: center;
   text-decoration: none #6B7280 solid;
   text-decoration-thickness: auto;
@@ -140,6 +140,11 @@ code {
   -webkit-user-select: none;
   touch-action: manipulation;
   width: auto;
+}
+
+.button.small, .custom-file-input.small + label {
+  padding: .45rem 1.08rem;
+  font-size: 1rem;
 }
 
 .button *, .custom-file-input + label * {
