@@ -157,6 +157,13 @@ function doesCollide (elemPos1, elemPos2) {
 }
 
 
+// clipboard
+
+let clipboard = new ClipboardJS('.copy-code');
+clipboard.on('success', function () {
+  crostini("Code successfully copied!");
+});
+
 
 
 // FIXES

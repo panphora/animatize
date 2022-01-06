@@ -26,18 +26,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
   <link rel="stylesheet" href="css/main.css?v=8">
-  <script src="https://unpkg.com/interactjs/dist/interact.min.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.10.11/interact.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/crostini@1.3.0/dist/crostini.umd.js" defer></script>
+
   <script src="js/main.js?v=8" defer></script>
 
   <script defer data-domain="animatize.com" data-api="https://round-butterfly-d351.remake.workers.dev/hello-world/event" src="https://round-butterfly-d351.remake.workers.dev/hello-world/script.js"></script>
 </head>
 <body>
   <div class="container">
-    <div>
-      <input type="file" name="file" id="file" class="custom-file-input small" />
-      <label for="file">upload a background</label>
-    </div>
-    <h1>Demo</h1>
+    <h1 class="h1">Making animations the easy way</h1>
     <div class="canvas full demo" data-input-from="demo">
       <div class="canvas-inner">
         <div class="character-container">
@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-    <h1>Try yourself:</h1>
+    <h2 class="h1">Try yourself:</h2>
     <div class="canvas" data-output-to="try-yourself">
       <div class="canvas-inner">
         <div class="character-container">
@@ -67,7 +67,11 @@
         </div>
       </div>
     </div>
-    <h1>Animate your own images!</h1>
+    <h2 class="h1">Animate your own images!</h2>
+    <div>
+      <input type="file" name="file" id="file" class="custom-file-input" />
+      <label for="file">upload a background</label>
+    </div>
     <div class="canvas user" data-output-to="animated-your-own-images">
       <div class="canvas-inner">
         <div class="character-container">
@@ -86,6 +90,8 @@
         </div>
       </div>
     </div>
+    <textarea class="code" readonly>hello there yeah cool</textarea>
+    <button class="button copy-code" data-clipboard-target=".code">copy code</button>
   </div>
 </body>
 </html>

@@ -1,10 +1,30 @@
 body {
+  line-height: 1.44;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1rem;
+}
+
+.h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+}
+
+.h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.h3 {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
 .container {
-  max-width: 800px;
-  margin: 60px auto;
+  max-width: 450px;
+  margin: 2.5rem auto;
 }
 
 .canvas {
@@ -89,8 +109,17 @@ label {
 
 
 
-code {
+.code {
+  display: block;
+  width: 100%;
+  min-height: 240px;
+  margin-bottom: 2rem;
+  border: 4px solid #111;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body .crostini {
+  background-color: #1F8535;
 }
 
 
@@ -129,7 +158,7 @@ code {
   cursor: pointer;
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.44;
   text-align: center;
   text-decoration: none #6B7280 solid;
   text-decoration-thickness: auto;
@@ -159,12 +188,6 @@ code {
   box-shadow: none;
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-@media (min-width: 768px) {
-  .button {
-    padding: .75rem 1.5rem;
-  }
 }
 
 
