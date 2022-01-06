@@ -36,7 +36,7 @@
   <script defer data-domain="animatize.com" data-api="https://round-butterfly-d351.remake.workers.dev/hello-world/event" src="https://round-butterfly-d351.remake.workers.dev/hello-world/script.js"></script>
 </head>
 <body>
-  <div class="container">
+  <div class="container childred-margin">
     <h1 class="h1">Making animations the easy way</h1>
     <p>I’ve always dreamed of making animations, but the software is so complex...</p>
     <img src="/images/animation-software.jpg">
@@ -59,21 +59,26 @@
       <h2 class="h1 inline-block intro-header">Animatize <img class="clicking-cursor" src="/images/clicking-cursor.svg"></h2>
     </div>
     <p>Make an animation by dragging a character around the screen</p>
-    <h2 class="h2">Try yourself:</h2>
-    <div class="canvas" data-output-to="try-yourself">
-      <div class="canvas-inner">
-        <div class="character-container">
-          <div class="character draggable">
-            <div class="character-inner"></div>
+    <div class="play">
+      <div class="play-inner childred-margin">
+        <h2 class="h2">Try yourself:</h2>
+        <div class="canvas" data-output-to="try-yourself" style="margin-top: 4rem;">
+          <img class="instructions instructions-1" src="/images/instructions-1.svg">
+          <div class="canvas-inner">
+            <div class="character-container">
+              <div class="character draggable">
+                <div class="character-inner"></div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="canvas full" data-input-from="try-yourself">
-      <div class="canvas-inner">
-        <div class="character-container">
-          <div class="character hide">
-            <div class="character-inner"></div>
+        <div class="canvas full" data-input-from="try-yourself">
+          <div class="canvas-inner">
+            <div class="character-container">
+              <div class="character hide">
+                <div class="character-inner"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
