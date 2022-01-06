@@ -209,7 +209,9 @@ let baseCSS = `
 .canvas-inner {
   width: 100%;
   padding-top: 60%;
-  background: url(../images/bg.png) top left / cover no-repeat;
+  background-position: top left;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .character-container {
@@ -230,7 +232,9 @@ let baseCSS = `
 .character-inner {
   width: 100%;
   padding-top: 100%;
-  background: url(../images/boat.png) top left / cover no-repeat;
+  background-position: top left;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .canvas.full {
