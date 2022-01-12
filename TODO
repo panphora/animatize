@@ -2,9 +2,18 @@
 √ upload images as data urls
 √ make the generated code responsive
 √ add the design to the page
+√ implement generate code
+√ add generate code instructions with arrows
+√ implement start animation over
+  √ clear generated code
+  √ hide generated code
+  √ erase history on user canvas element
+  √ remove drag-started class
+  √ reset character position
 
-add danger area
-implement erase everything
+implement "erase everything" button
+  not really necessary since you can just upload new files anyways
+
   clear file inputs
   clear generated style element
   clear generated code
@@ -13,13 +22,3 @@ implement erase everything
   reset character position
   add back hide-user-animations class
   set data-has-character & data-has-background to false
-implement start animation over
-  clear generated code
-  erase history
-  remove drag-started class
-  reset character position
-  add back hide-user-animations class
-  set data-has-character & data-has-background to false
-
-implement generate code
-add generate code instruction (image)

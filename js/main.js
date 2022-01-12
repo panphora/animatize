@@ -260,8 +260,9 @@ let baseHTML = `
 </div>
 `;
 
+let userAnimationOutputElem = userAnimationPlayContainer.querySelector('[data-input-from="animate-your-own-images"]');
 function generateCode () {
-  let animationHistory = userAnimationPlayContainer.querySelector('[data-input-from="animate-your-own-images"]').animationHistory;
+  let animationHistory = userAnimationOutputElem.animationHistory;
 
   if (backgroundBackgroundImageStylesheet.innerHTML.length === 0) {
     crostini("Upload a background first!" , {type: "error"});
@@ -318,6 +319,27 @@ document.querySelector(".generate-code").addEventListener("click", () => {
     codeContainer.querySelector(".code").value = generatedCode;
     codeContainer.classList.remove("hide");
   }
+});
+
+
+let userAnimationInputElem = userAnimationPlayContainer.querySelector('[data-output-to="animate-your-own-images"]');
+document.querySelector(".reset-animation").addEventListener("click", () => {
+  // clear generated code
+  codeContainer.querySelector(".code").value = "";
+  // hide generated code
+  codeContainer.classList.add("hide");
+  // erase history on user canvas element
+  userAnimationOutputElem.animationHistory = [];
+  // remove drag-started class
+  userAnimationOutputElem.closest(".play").classList.remove("drag-started");
+  // reset character position
+  let characterElem = userAnimationInputElem.querySelector(".character");
+  characterElem.style.transform = `translate(0px, 0px)`;
+  // reset relative position data on character elem
+  characterElem.positionX;
+  characterElem.positionY;
+  // success message!
+  crostini("Animation successfully reset");
 });
 
 

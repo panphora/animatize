@@ -239,6 +239,10 @@ body .crostini {
   display: none;
 }
 
+.hide-user-animations .reset-animation {
+  display: none;
+}
+
 
 /* utils */
 
