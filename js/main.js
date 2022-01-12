@@ -121,6 +121,7 @@ function gameLoop() {
 
       let currentTranslation = animationOutputElem.animationHistory[animationOutputElem.animationIndex];
       animationOutputElem.characterElem.classList.remove("hide");
+
       animationOutputElem.characterContainerElem.style.transform = `translate(${currentTranslation[0]}%, ${currentTranslation[1]}%)`;
       animationOutputElem.animationIndex++;
     }
@@ -332,12 +333,14 @@ document.querySelector(".reset-animation").addEventListener("click", () => {
   userAnimationOutputElem.animationHistory = [];
   // remove drag-started class
   userAnimationOutputElem.closest(".play").classList.remove("drag-started");
+  // reset animation index
+  userAnimationOutputElem.animationIndex = 0;
   // reset character position
   let characterElem = userAnimationInputElem.querySelector(".character");
   characterElem.style.transform = `translate(0px, 0px)`;
   // reset relative position data on character elem
-  characterElem.positionX;
-  characterElem.positionY;
+  characterElem.positionX = 0;
+  characterElem.positionY = 0;
   // success message!
   crostini("Animation successfully reset");
 });
