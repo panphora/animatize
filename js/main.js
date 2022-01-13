@@ -261,16 +261,15 @@ let baseHTML = `
 </div>
 `;
 
-let userAnimationOutputElem = userAnimationPlayContainer.querySelector('[data-input-from="animate-your-own-images"]');
-function generateCode () {
-  let animationHistory = userAnimationOutputElem.animationHistory;
+function generateCode (sourceElem, isDemo) {
+  let animationHistory = sourceElem.animationHistory;
 
-  if (backgroundBackgroundImageStylesheet.innerHTML.length === 0) {
+  if (!isDemo && backgroundBackgroundImageStylesheet.innerHTML.length === 0) {
     crostini("Upload a background first!" , {type: "error"});
     return;
   }
 
-  if (characterBackgroundImageStylesheet.innerHTML.length === 0) {
+  if (!isDemo && characterBackgroundImageStylesheet.innerHTML.length === 0) {
     crostini("Upload a character first!" , {type: "error"});
     return;
   }
@@ -280,7 +279,13 @@ function generateCode () {
     return;
   }
 
-  let combinedCSS = "<style>" + baseCSS + backgroundBackgroundImageStylesheet.innerHTML + characterBackgroundImageStylesheet.innerHTML + "</style>";
+  let combinedCSS;
+  if (!isDemo) {
+    combinedCSS = "<style>" + baseCSS + backgroundBackgroundImageStylesheet.innerHTML + characterBackgroundImageStylesheet.innerHTML + "</style>";
+  } else {
+    let demoBackgroundImageStylesheet = document.querySelector("#demo-background-images");
+    combinedCSS = "<style>" + baseCSS + demoBackgroundImageStylesheet.innerHTML + "</style>";
+  }
 
   let baseJS = `
 <script>
@@ -313,13 +318,22 @@ gameLoop();
 }
 
 
-let codeContainer = document.querySelector(".code-container");
-document.querySelector(".generate-code").addEventListener("click", () => {
-  let generatedCode = generateCode();
-  if (generatedCode) {
-    codeContainer.querySelector(".code").value = generatedCode;
-    codeContainer.classList.remove("hide");
-  }
+document.querySelectorAll(".generate-code").forEach(generateCodeElem => {
+  generateCodeElem.addEventListener("click", (event) => {
+    let codePlaygroundElem = event.target.closest(".code-playground");
+    let codeContainer = codePlaygroundElem.querySelector(".code-container");
+
+    let sourceElemSelector = event.currentTarget.getAttribute("data-animation-history-elem-selector");
+    let sourceElem = document.querySelector(sourceElemSelector);
+    let isDemo = event.currentTarget.getAttribute("data-is-demo") === "true";
+
+    let generatedCode = generateCode(sourceElem, isDemo);
+
+    if (generatedCode) {
+      codeContainer.querySelector(".code").value = generatedCode;
+      codeContainer.classList.remove("hide");
+    }
+  });
 });
 
 
@@ -330,6 +344,9 @@ document.querySelectorAll(".reset-animation").forEach(resetAnimationElem => {
     let _userAnimationInputElem = playElem.querySelector("[data-output-to]");
     let outputCharacterElem = _userAnimationOutputElem.querySelector(".character");
     let inputCharacterElem = _userAnimationInputElem.querySelector(".character");
+    let codePlaygroundSelector = event.currentTarget.getAttribute("data-code-playground-selector");
+    let codePlaygroundElem = document.querySelector(codePlaygroundSelector);
+    let codeContainer = codePlaygroundElem.querySelector(".code-container");
 
     // clear generated code
     codeContainer.querySelector(".code").value = "";
@@ -352,12 +369,6 @@ document.querySelectorAll(".reset-animation").forEach(resetAnimationElem => {
     crostini("Animation successfully reset");
   });
 }); 
-
-
-
-
-
-
 
 
 
