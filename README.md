@@ -12,7 +12,7 @@ Try the demo on [Animatize.com](https://animatize.com/)
 
 ### Two options:
 
-#### 1. Use the demo to generate code for your own site
+#### 1. Use [the demo](https://animatize.com/) to generate code for your own site
 
 You can generate an animation using your own images and then modify the code there
 
