@@ -293,7 +293,13 @@ body .crostini {
 }
 
 @media (min-width: 700px) {
+
   .play {
+    border: 3px solid #D6336C;
+    border-radius: 5px;
+  }
+
+  .play.blue {
     border: 3px solid #3B5BDB;
     border-radius: 5px;
   }
