@@ -151,12 +151,12 @@ customFileInputs.forEach((customFileInput) => {
         customFileInput.nextElementSibling.innerText = file.name;
 
         if (customFileInput.id === "backgroundImage") {
-          backgroundBackgroundImageStylesheet.innerHTML = ".user-background-image {background-image: url(" + reader.result + ")}";
+          backgroundBackgroundImageStylesheet.innerHTML = ".user-background-image {background-image: url(" + reader.result + ") !important;}";
           userAnimationPlayContainer.setAttribute("data-has-background", "true");
         }
 
         if (customFileInput.id === "characterImage") {
-          characterBackgroundImageStylesheet.innerHTML = ".user-character-image {background-image: url(" + reader.result + ")}";
+          characterBackgroundImageStylesheet.innerHTML = ".user-character-image {background-image: url(" + reader.result + ") !important;}";
           userAnimationPlayContainer.setAttribute("data-has-character", "true");
         }
 
