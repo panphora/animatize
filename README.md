@@ -24,6 +24,14 @@ Feel free to build your own animation service using the code here as proof-of-co
 
 All the code can be found in `js/main.js`
 
+## Animating with natural movement
+
+This idea has been a dream of mine for years. As a web developer, I've never learned After Effects or any other complex animation software.
+
+I've always dreamed of creating interactive demos and animations just by using my natural mouse movements.
+
+So, in early January 2022, [I took a few days off from my main project to create Animatize](https://twitter.com/panphora/status/1478805374455140353), a proof-of-concept showing off the idea that other people could try!
+
 ## License
 
 MIT License
