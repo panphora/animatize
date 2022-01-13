@@ -323,27 +323,36 @@ document.querySelector(".generate-code").addEventListener("click", () => {
 });
 
 
-let userAnimationInputElem = userAnimationPlayContainer.querySelector('[data-output-to="animate-your-own-images"]');
-document.querySelector(".reset-animation").addEventListener("click", () => {
-  // clear generated code
-  codeContainer.querySelector(".code").value = "";
-  // hide generated code
-  codeContainer.classList.add("hide");
-  // erase history on user canvas element
-  userAnimationOutputElem.animationHistory = [];
-  // remove drag-started class
-  userAnimationOutputElem.closest(".play").classList.remove("drag-started");
-  // reset animation index
-  userAnimationOutputElem.animationIndex = 0;
-  // reset character position
-  let characterElem = userAnimationInputElem.querySelector(".character");
-  characterElem.style.transform = `translate(0px, 0px)`;
-  // reset relative position data on character elem
-  characterElem.positionX = 0;
-  characterElem.positionY = 0;
-  // success message!
-  crostini("Animation successfully reset");
-});
+document.querySelectorAll(".reset-animation").forEach(resetAnimationElem => {
+  resetAnimationElem.addEventListener("click", (event) => {
+    let playElem = event.target.closest(".play");
+    let _userAnimationOutputElem = playElem.querySelector("[data-input-from]");
+    let _userAnimationInputElem = playElem.querySelector("[data-output-to]");
+    let outputCharacterElem = _userAnimationOutputElem.querySelector(".character");
+    let inputCharacterElem = _userAnimationInputElem.querySelector(".character");
+
+    // clear generated code
+    codeContainer.querySelector(".code").value = "";
+    // hide generated code
+    codeContainer.classList.add("hide");
+    // erase history on user canvas element
+    _userAnimationOutputElem.animationHistory = [];
+    // remove drag-started class
+    playElem.classList.remove("drag-started");
+    // reset animation index
+    _userAnimationOutputElem.animationIndex = 0;
+    // hide output character
+    outputCharacterElem.classList.add("hide");
+    // reset input character position
+    inputCharacterElem.style.transform = `translate(0px, 0px)`;
+    // reset relative position data on character elem
+    inputCharacterElem.positionX = 0;
+    inputCharacterElem.positionY = 0;
+    // success message!
+    crostini("Animation successfully reset");
+  });
+}); 
+
 
 
 
