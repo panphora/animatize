@@ -29,6 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .play {
+  position: relative;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
   padding: 2.5rem 1.5rem 2.5rem 1.5rem;
@@ -405,7 +406,18 @@ details[open] summary {
 
 
 
+.download-assets {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: calc(158px * 1.18);
+  height: calc(175px * 1.18);
+  background: url(../images/download-assets.png) top left / cover no-repeat;
+}
 
+.download-assets:hover {
+  opacity: .8;
+}
 
 
 
