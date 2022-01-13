@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
 /* 123 */
 
 .instruction-123 {
-
+  margin-bottom: 14rem;
 }
 
 .instruction-123 > div {
@@ -408,8 +408,8 @@ details[open] summary {
 
 .download-assets {
   position: absolute;
-  bottom: 14px;
-  right: 14px;
+  bottom: 16px;
+  right: 36px;
   width: calc(158px * 1.18);
   height: calc(175px * 1.18);
   background: url(../images/download-assets.png) top left / cover no-repeat;
@@ -418,6 +418,8 @@ details[open] summary {
 .download-assets:hover {
   opacity: .8;
 }
+
+
 
 
 
